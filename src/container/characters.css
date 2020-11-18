@@ -2,7 +2,8 @@
   border: 1px green solid;
   width: 25%;
   box-sizing: border-box;
-  height: 150px;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .heroes_box {

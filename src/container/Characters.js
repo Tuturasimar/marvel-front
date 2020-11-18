@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Characters = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,11 +23,22 @@ const Characters = () => {
         <div>
           <div className="heroes_box">
             {data.map((heroes, index) => {
-              console.log(heroes);
               return (
-                <div key={index} className="hero_box">
+                <Link
+                  key={index}
+                  className="hero_box"
+                  to={{
+                    pathname: "/hero",
+                    state: { id: heroes.id },
+                  }}
+                >
                   <p>{heroes.name}</p>
-                </div>
+                  <p>{heroes.description}</p>
+                  <img
+                    src={`${heroes.thumbnail.path}.${heroes.thumbnail.extension}`}
+                    alt="hero"
+                  ></img>
+                </Link>
               );
             })}
           </div>
