@@ -1,0 +1,12 @@
+.hero_box {
+  border: 1px green solid;
+  width: 25%;
+  box-sizing: border-box;
+  height: 150px;
+}
+
+.heroes_box {
+  border: 1px red solid;
+  display: flex;
+  flex-wrap: wrap;
+}
