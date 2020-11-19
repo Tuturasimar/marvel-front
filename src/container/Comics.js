@@ -1,25 +1,23 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Characters = () => {
+const Comics = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
   const [number, setNumber] = useState();
   const [skip, setSkip] = useState(0);
-  const [heroFav, setHeroFav] = useState([]);
-  console.log(heroFav);
 
   let tab = [];
   for (let i = 1; i <= Math.ceil(number / 100); i++) {
     tab.push(i);
   }
+
   const handleChange = async (event) => {
     if (event.target.value !== "") {
       const value = event.target.value;
       const response = await axios.get(
-        `https://marvel-ts.herokuapp.com/search?value=${value}`
+        `https://marvel-ts.herokuapp.com/research?value=${value}`
       );
       setData(response.data.data.data.results);
       setNumber(response.data.data.data.total);
@@ -29,15 +27,16 @@ const Characters = () => {
       fetchData();
     }
   };
+
   const fetchData = async () => {
     const response = await axios.get(
-      `https://marvel-ts.herokuapp.com/pick?skip=${skip}`
+      `http://localhost:3100/comics?skip=${skip}`
     );
     setNumber(response.data.data.data.total);
     setData(response.data.data.data.results);
+
     setIsLoading(false);
   };
-
   useEffect(() => {
     fetchData();
   }, [skip]);
@@ -49,32 +48,22 @@ const Characters = () => {
       ) : (
         <div className="container">
           <input type="text" onChange={handleChange}></input>
-          <p>Nombre de héros : {number}</p>
+          <p>Nombre de comics : {number}</p>
           <div className="heroes_box">
-            {data.map((heroes, index) => {
+            {data.map((comics, index) => {
+              console.log(comics);
               return (
-                <>
-                  <div className="hero_box" key={index}>
-                    <Link className="link" to={`/hero/${heroes.id}`}>
-                      <p>{heroes.name}</p>
-
-                      <img
-                        src={`${heroes.thumbnail.path}.${heroes.thumbnail.extension}`}
-                        alt="hero"
-                      ></img>
-                    </Link>
-                    <div
-                      className="circle"
-                      onClick={() => {
-                        const copy = [...heroFav];
-                        copy.push({ fav: heroes });
-                        setHeroFav(copy);
-                      }}
-                    >
-                      <FontAwesomeIcon icon="heart" />
-                    </div>
-                  </div>
-                </>
+                <Link
+                  key={index}
+                  className="hero_box"
+                  to={`/comics/${comics.id}`}
+                >
+                  <p>{comics.title}</p>
+                  <img
+                    src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
+                    alt="hero"
+                  ></img>
+                </Link>
               );
             })}
           </div>
@@ -102,4 +91,4 @@ const Characters = () => {
     </>
   );
 };
-export default Characters;
+export default Comics;

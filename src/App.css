@@ -1,3 +1,5 @@
 /* Other rules */
 
 @import "./container/characters.css";
+
+@import "./container/hero.css";

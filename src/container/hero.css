@@ -1,0 +1,40 @@
+.hero_global {
+  width: 100%;
+  display: flex;
+}
+
+.hero_description {
+  width: 35%;
+  border: 1px red solid;
+}
+
+.hero_description img {
+  width: 100%;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+.hero_comics {
+  width: 55%;
+  border: 1px green solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero_comics img {
+  object-fit: cover;
+  height: 250px;
+}
+
+.comics_hero {
+  border: 1px blue solid;
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
