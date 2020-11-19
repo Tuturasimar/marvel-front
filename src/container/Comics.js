@@ -30,7 +30,7 @@ const Comics = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `http://localhost:3100/comics?skip=${skip}`
+      `https://marvel-ts.herokuapp.com/comics?skip=${skip}`
     );
     setNumber(response.data.data.data.total);
     setData(response.data.data.data.results);
