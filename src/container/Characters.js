@@ -9,8 +9,6 @@ const Characters = () => {
   const [number, setNumber] = useState();
   const [skip, setSkip] = useState(0);
   const [heroFav, setHeroFav] = useState([]);
-  console.log(heroFav);
-
   let tab = [];
   for (let i = 1; i <= Math.ceil(number / 100); i++) {
     tab.push(i);
@@ -29,6 +27,7 @@ const Characters = () => {
       fetchData();
     }
   };
+
   const fetchData = async () => {
     const response = await axios.get(
       `https://marvel-ts.herokuapp.com/pick?skip=${skip}`
@@ -37,6 +36,7 @@ const Characters = () => {
     setData(response.data.data.data.results);
     setIsLoading(false);
   };
+  console.log(data);
 
   useEffect(() => {
     fetchData();
@@ -66,12 +66,31 @@ const Characters = () => {
                     <div
                       className="circle"
                       onClick={() => {
-                        const copy = [...heroFav];
-                        copy.push({ fav: heroes });
-                        setHeroFav(copy);
+                        if (
+                          data[index].status === false ||
+                          !data[index].status
+                        ) {
+                          const copy = [...heroFav];
+                          copy.push({ fav: heroes });
+                          setHeroFav(copy);
+                          const another = [...data];
+                          another[index].status = true;
+                          setData(another);
+                        } else {
+                          const copy = [...data];
+                          copy[index].status = false;
+                          setData(copy);
+                        }
                       }}
                     >
-                      <FontAwesomeIcon icon="heart" />
+                      {data[index].status ? (
+                        <FontAwesomeIcon
+                          icon="heart"
+                          style={{ color: "red" }}
+                        />
+                      ) : (
+                        <FontAwesomeIcon icon="heart" />
+                      )}
                     </div>
                   </div>
                 </>
