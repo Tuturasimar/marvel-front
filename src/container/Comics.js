@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Comics = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
   const [number, setNumber] = useState();
   const [skip, setSkip] = useState(0);
+  const [comicFav, setComicFav] = useState([]);
 
   let tab = [];
   for (let i = 1; i <= Math.ceil(number / 100); i++) {
@@ -44,9 +45,11 @@ const Comics = () => {
   return (
     <>
       {isLoading ? (
-        <span className="loading">
-          Recherche des gemmes de l'infini en cours...
-        </span>
+        <div className="loading_box">
+          <span className="loading">
+            Recherche des gemmes de l'infini en cours...
+          </span>
+        </div>
       ) : (
         <div className="container">
           <div className="box_search">
@@ -60,17 +63,47 @@ const Comics = () => {
             {data.map((comics, index) => {
               console.log(comics);
               return (
-                <Link
-                  key={index}
-                  className="hero_box"
-                  to={`/comics/${comics.id}`}
-                >
-                  <p>{comics.title}</p>
-                  <img
-                    src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
-                    alt="hero"
-                  ></img>
-                </Link>
+                <div key={index} className="box_comics">
+                  <div className="comic_box">
+                    <img
+                      src={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
+                      alt="hero"
+                    ></img>
+                    <div
+                      className="circle2"
+                      onClick={() => {
+                        if (
+                          data[index].status === false ||
+                          !data[index].status
+                        ) {
+                          const copy = [...comicFav];
+                          copy.push({ fav: comics });
+                          setComicFav(copy);
+                          const another = [...data];
+                          another[index].status = true;
+                          setData(another);
+                        } else {
+                          const copy = [...data];
+                          copy[index].status = false;
+                          setData(copy);
+                        }
+                      }}
+                    >
+                      {data[index].status ? (
+                        <FontAwesomeIcon
+                          icon="heart"
+                          style={{ color: "red" }}
+                        />
+                      ) : (
+                        <FontAwesomeIcon icon="heart" />
+                      )}
+                    </div>
+                    <div className="comic_description">
+                      <h2>{comics.title}</h2>
+                      <p>{comics.description}</p>
+                    </div>
+                  </div>
+                </div>
               );
             })}
           </div>

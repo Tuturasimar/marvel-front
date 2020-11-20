@@ -93,7 +93,9 @@
   display: flex;
   flex-wrap: wrap;
   background-color: black;
-  border-radius: 50px;
+  margin-bottom: 20px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 .circle {
   height: 30px;

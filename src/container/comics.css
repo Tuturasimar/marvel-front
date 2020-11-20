@@ -1,0 +1,33 @@
+.box_comics {
+  display: flex;
+  text-decoration: none;
+  width: 48.1%;
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+.comic_box {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.comic_box img {
+  width: 50%;
+}
+
+.circle2 {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+  border: black 1px solid;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

@@ -2,10 +2,15 @@
   width: 100%;
   display: flex;
 }
-
+h1 {
+  font-family: "Bebas Neue", cursive;
+  text-align: center;
+  font-size: 50px;
+}
 .hero_description {
   width: 35%;
-  border: 1px red solid;
+  background-color: black;
+  color: white;
 }
 
 .hero_description img {
@@ -19,10 +24,11 @@
 }
 
 .hero_comics {
-  width: 55%;
-  border: 1px green solid;
+  width: 65%;
   display: flex;
   flex-wrap: wrap;
+  background-color: black;
+  box-sizing: border-box;
 }
 
 .hero_comics img {
@@ -31,10 +37,23 @@
 }
 
 .comics_hero {
-  border: 1px blue solid;
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  color: white;
+}
+
+.comic_description {
+  padding: 10px;
+  box-sizing: border-box;
 }

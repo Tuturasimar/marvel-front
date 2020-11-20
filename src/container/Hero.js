@@ -34,7 +34,11 @@ const Hero = () => {
   return (
     <>
       {isLoading ? (
-        <span>Chargement en cours...</span>
+        <div className="loading_box">
+          <span className="loading">
+            Recherche des gemmes de l'infini en cours...
+          </span>
+        </div>
       ) : (
         <div className="container">
           <div className="hero_global">
@@ -54,11 +58,14 @@ const Hero = () => {
                 console.log(comic);
                 return (
                   <div className="comics_hero" key={index}>
-                    <p>{comic.title}</p>
                     <img
                       src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                       alt="comic"
                     ></img>
+                    <div className="comic_description">
+                      <h2>{comic.title}</h2>
+                      <p>{comic.description}</p>
+                    </div>
                   </div>
                 );
               })}
