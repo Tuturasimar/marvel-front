@@ -1,0 +1,38 @@
+.header {
+  height: 200px;
+  background-color: white;
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.header .container {
+  background-color: white;
+}
+
+.logo img {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.no_link {
+  text-decoration: none;
+}
+
+.header_bouton {
+  display: flex;
+}
+
+.header .container p {
+  margin: 0px 40px;
+  background-color: white;
+  outline: none;
+  font-family: "Broadway";
+  font-size: 45px;
+  color: #f11f20;
+  cursor: pointer;
+}

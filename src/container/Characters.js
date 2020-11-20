@@ -13,6 +13,7 @@ const Characters = () => {
   for (let i = 1; i <= Math.ceil(number / 100); i++) {
     tab.push(i);
   }
+
   const handleChange = async (event) => {
     if (event.target.value !== "") {
       const value = event.target.value;
@@ -48,7 +49,11 @@ const Characters = () => {
         <span>Chargement en cours...</span>
       ) : (
         <div className="container">
-          <input type="text" onChange={handleChange}></input>
+          <div className="search_bar">
+            <span className="recherche">Recherche :</span>
+            <input type="text" onChange={handleChange}></input>
+          </div>
+
           <p>Nombre de héros : {number}</p>
           <div className="heroes_box">
             {data.map((heroes, index) => {

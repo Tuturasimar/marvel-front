@@ -1,5 +1,13 @@
 /* Other rules */
 
+body {
+  background-image: url("../src/assets/images/fond_marvel.png");
+}
+
+@import "./font.css";
+
+@import "./components/header.css";
+
 @import "./container/characters.css";
 
 @import "./container/hero.css";

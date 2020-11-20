@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Broadway";
+  src: url("./assets/fonts/Broadway-Gradient-3D-Regular.ttf.woff")
+      format("woff"),
+    url("./assets/fonts/Broadway-Gradient-3D-Regular.ttf.svg#Broadway-Gradient-3D-Regular")
+      format("svg"),
+    url("./assets/fonts/Broadway-Gradient-3D-Regular.ttf.eot"),
+    url("./assets/fonts/Broadway-Gradient-3D-Regular.ttf.eot?#iefix")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
