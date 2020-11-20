@@ -1,13 +1,22 @@
 .container {
   width: 1080px;
   margin: 0 auto;
-  background-color: white;
 }
 
-.container p {
+.heroes_box p {
   color: white;
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
 }
-
+.box_search {
+  background-color: white;
+  width: 100%;
+  border-radius: 20%;
+  border: 3px black solid;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding-left: 100px;
+}
 .search_bar {
   display: flex;
   align-items: center;
@@ -21,18 +30,29 @@
   border: none;
   border-bottom: 1px black solid;
   outline: none;
+  font-family: "Bebas Neue", cursive;
+  font-size: 30px;
 }
 
-.recherche {
+.search_bar input:focus {
+  border-color: #f11f20;
+}
+
+.recherche,
+.text {
   padding-left: 20px;
   color: #1b1b50;
-  font-family: "Broadway";
+  font-family: "Bebas Neue", cursive;
   font-size: 45px;
   line-height: 40px;
+  letter-spacing: -2px;
+}
+
+.text {
+  font-size: 30px;
 }
 
 .hero_box {
-  border: 1px green solid;
   width: 23.146%;
   box-sizing: border-box;
   height: 250px;
@@ -41,10 +61,11 @@
   position: relative;
   text-decoration: none;
   color: black;
+  text-align: center;
+  border-radius: 10%;
 }
 .link {
   text-decoration: none;
-  color: red;
 }
 .hero_box img {
   width: 100%;
@@ -52,10 +73,10 @@
   height: 200px;
 }
 .heroes_box {
-  border: 1px red solid;
   display: flex;
   flex-wrap: wrap;
   background-color: black;
+  border-radius: 50px;
 }
 .circle {
   height: 30px;
@@ -88,21 +109,23 @@
   cursor: pointer;
 } */
 .boutons {
+  margin-bottom: 20px;
   display: flex;
-  border: 1px violet solid;
   justify-content: center;
-  height: 50px;
+  height: 60px;
   flex-wrap: wrap;
   overflow-y: scroll;
   box-sizing: border-box;
 }
 
 .pagination {
-  border: green solid 1px;
   width: 5%;
   cursor: pointer;
-  margin: 10px;
+  margin: 5px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 20px;
 }
 
 .pagination button {
@@ -112,8 +135,10 @@
   color: black;
   border: 1px black solid;
   cursor: pointer;
+  border-radius: 10px;
+  font-family: "Bebas Neue", cursive;
 }
 
 .pagination button:active {
-  background-color: red;
+  background-color: #f11f20;
 }

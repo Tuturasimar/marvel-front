@@ -1,12 +1,14 @@
 .header {
-  height: 200px;
+  height: 275px;
   background-color: white;
-  width: 1080px;
-  margin: 0 auto;
-}
-
-.header .container {
-  background-color: white;
+  width: 100%;
+  margin-bottom: 80px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 3px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo img {
@@ -27,12 +29,12 @@
   display: flex;
 }
 
-.header .container p {
+.menu_bouton {
   margin: 0px 40px;
-  background-color: white;
   outline: none;
-  font-family: "Broadway";
+  font-family: "Bebas Neue", cursive;
   font-size: 45px;
   color: #f11f20;
   cursor: pointer;
+  letter-spacing: -2px;
 }

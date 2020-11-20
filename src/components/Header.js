@@ -5,16 +5,16 @@ import Logo from "../assets/images/Marvel_Universe.png";
 const Header = () => {
   return (
     <>
-      <div className="header">
-        <div className="container">
+      <div className="container">
+        <div className="header">
           <div className="logo">
             <img src={Logo} alt="logo"></img>
             <div className="header_bouton">
               <Link className="no_link" to="/">
-                <p>Personnages</p>
+                <p className="menu_bouton">Personnages</p>
               </Link>
               <Link className="no_link" to="/comics">
-                <p>Comics</p>
+                <p className="menu_bouton">Comics</p>
               </Link>
             </div>
           </div>

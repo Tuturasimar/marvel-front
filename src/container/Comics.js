@@ -47,8 +47,13 @@ const Comics = () => {
         <span>Chargement en cours...</span>
       ) : (
         <div className="container">
-          <input type="text" onChange={handleChange}></input>
-          <p>Nombre de comics : {number}</p>
+          <div className="box_search">
+            <div className="search_bar">
+              <span className="recherche">Recherche :</span>
+              <input type="text" onChange={handleChange}></input>
+            </div>
+            <p className="text">Nombre de comics : {number}</p>
+          </div>
           <div className="heroes_box">
             {data.map((comics, index) => {
               console.log(comics);

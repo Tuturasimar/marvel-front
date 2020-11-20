@@ -6,6 +6,8 @@ body {
 
 @import "./font.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 @import "./components/header.css";
 
 @import "./container/characters.css";

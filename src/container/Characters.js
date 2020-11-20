@@ -49,12 +49,15 @@ const Characters = () => {
         <span>Chargement en cours...</span>
       ) : (
         <div className="container">
-          <div className="search_bar">
-            <span className="recherche">Recherche :</span>
-            <input type="text" onChange={handleChange}></input>
+          <div className="box_search">
+            <div className="search_bar">
+              <span className="recherche">Recherche :</span>
+              <input type="text" onChange={handleChange}></input>
+            </div>
+
+            <p className="text">Nombre de héros : {number}</p>
           </div>
 
-          <p>Nombre de héros : {number}</p>
           <div className="heroes_box">
             {data.map((heroes, index) => {
               return (
