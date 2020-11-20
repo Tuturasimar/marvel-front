@@ -20,6 +20,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20%;
+  background-color: white;
 }
 .no_link {
   text-decoration: none;

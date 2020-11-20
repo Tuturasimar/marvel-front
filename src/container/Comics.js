@@ -44,7 +44,9 @@ const Comics = () => {
   return (
     <>
       {isLoading ? (
-        <span>Chargement en cours...</span>
+        <span className="loading">
+          Recherche des gemmes de l'infini en cours...
+        </span>
       ) : (
         <div className="container">
           <div className="box_search">

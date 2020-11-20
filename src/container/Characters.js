@@ -46,7 +46,11 @@ const Characters = () => {
   return (
     <>
       {isLoading ? (
-        <span>Chargement en cours...</span>
+        <div className="loading_box">
+          <span className="loading">
+            Recherche des gemmes de l'infini en cours...
+          </span>
+        </div>
       ) : (
         <div className="container">
           <div className="box_search">

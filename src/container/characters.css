@@ -2,6 +2,23 @@
   width: 1080px;
   margin: 0 auto;
 }
+.loading_box {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px black solid;
+  width: 50%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading {
+  font-family: "Bebas Neue", cursive;
+  font-size: 40px;
+
+  color: #f11f20;
+}
 
 .heroes_box p {
   color: white;
