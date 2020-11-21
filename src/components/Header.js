@@ -16,6 +16,9 @@ const Header = () => {
               <Link className="no_link" to="/comics">
                 <p className="menu_bouton">Comics</p>
               </Link>
+              <Link className="no_link" to="/favoris">
+                <p className="menu_bouton">Favoris</p>
+              </Link>
             </div>
           </div>
         </div>

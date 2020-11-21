@@ -16,11 +16,18 @@ h1 {
 .hero_description img {
   width: 100%;
 }
-
+.hero_text {
+  padding: 10px;
+  box-sizing: border-box;
+}
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+}
+
+.sticky p {
+  font-family: "Bebas Neue", cursive;
 }
 
 .hero_comics {

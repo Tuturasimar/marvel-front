@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PaginatedContent from "../components/PaginatedContent";
 
 const Comics = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,8 +23,6 @@ const Comics = () => {
       );
       setData(response.data.data.data.results);
       setNumber(response.data.data.data.total);
-
-      console.log(response);
     } else {
       fetchData();
     }
@@ -61,7 +60,6 @@ const Comics = () => {
           </div>
           <div className="heroes_box">
             {data.map((comics, index) => {
-              console.log(comics);
               return (
                 <div key={index} className="box_comics">
                   <div className="comic_box">
@@ -107,24 +105,8 @@ const Comics = () => {
               );
             })}
           </div>
-          <div className="boutons">
-            {tab.map((page, index) => {
-              return (
-                <div className="pagination" key={index}>
-                  <button
-                    onClick={() => {
-                      if (page === 1) {
-                        setSkip(0);
-                      } else {
-                        setSkip(page * 100 - 100);
-                      }
-                    }}
-                  >
-                    {page}
-                  </button>
-                </div>
-              );
-            })}
+          <div>
+            <PaginatedContent number={number} setSkip={setSkip} />
           </div>
         </div>
       )}

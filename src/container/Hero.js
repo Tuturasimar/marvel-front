@@ -48,8 +48,10 @@ const Hero = () => {
                   src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
                   alt="hero"
                 ></img>
-                <h1>{hero.name}</h1>
-                <p>{hero.description}</p>
+                <div className="hero_text">
+                  <h1>{hero.name}</h1>
+                  <p>{hero.description}</p>
+                </div>
               </div>
             </div>
 
@@ -69,6 +71,7 @@ const Hero = () => {
                   </div>
                 );
               })}
+              ;
             </div>
           </div>
         </div>

@@ -4,6 +4,8 @@ body {
   background-image: url("../src/assets/images/fond_marvel.png");
 }
 
+@import "./components/paginatedContent.css";
+
 @import "./font.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");

@@ -1,0 +1,35 @@
+.test_pagination {
+  width: 100%;
+}
+.test_pagination ul {
+  background-color: white;
+  margin: 0 auto;
+  width: 60%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border: 2px black solid;
+  margin-bottom: 20px;
+}
+
+.selected {
+  background-color: red;
+}
+
+.previous:disabled {
+  display: hidden;
+}
+
+li {
+  list-style-type: none;
+  font-family: "Bebas Neue", cursive;
+  width: 40px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+li > a {
+  outline: none;
+}

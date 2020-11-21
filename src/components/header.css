@@ -1,7 +1,8 @@
 .header {
   height: 275px;
   background-color: white;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   margin-bottom: 80px;
   border-radius: 50%;
   box-sizing: border-box;
@@ -32,7 +33,7 @@
 }
 
 .menu_bouton {
-  margin: 0px 40px;
+  margin: 0px 20px;
   outline: none;
   font-family: "Bebas Neue", cursive;
   font-size: 45px;
