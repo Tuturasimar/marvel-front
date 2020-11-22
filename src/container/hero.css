@@ -64,3 +64,26 @@ h2 {
   padding: 10px;
   box-sizing: border-box;
 }
+
+@media (max-width: 600px) {
+  .hero_global {
+    flex-direction: column;
+  }
+  .hero_description {
+    width: 100%;
+    background-color: black;
+    color: white;
+  }
+  .hero_comics {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    box-sizing: border-box;
+  }
+  .hero_comics img {
+    object-fit: cover;
+    height: 175px;
+    max-width: 100px;
+  }
+}

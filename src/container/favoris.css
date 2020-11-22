@@ -1,0 +1,12 @@
+.fav {
+  background-color: white;
+  border-radius: 80%;
+  border: 2px black solid;
+  height: 100px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}

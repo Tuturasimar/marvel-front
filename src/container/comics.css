@@ -23,11 +23,35 @@
   background-color: white;
   border: black 1px solid;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  position: center;
 
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+  .box_comics {
+    width: 47%;
+  }
+}
+@media (max-width: 768px) {
+  .box_comics {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px;
+  }
+  .comic_box img {
+    height: 175px;
+    max-width: 100px;
+  }
+  .comic_box {
+    align-items: center;
+  }
+  .comic_description p {
+    font-size: 14px;
+  }
 }

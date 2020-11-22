@@ -15,6 +15,12 @@ const Comics = () => {
     tab.push(i);
   }
 
+  const handleSave = async () => {
+    await localStorage.setItem("comics", JSON.stringify(data));
+    let comic = JSON.parse(localStorage.getItem("comics"));
+    setComicFav(comic);
+  };
+
   const handleChange = async (event) => {
     if (event.target.value !== "") {
       const value = event.target.value;
@@ -36,6 +42,8 @@ const Comics = () => {
     setData(response.data.data.data.results);
 
     setIsLoading(false);
+    let comic = JSON.parse(localStorage.getItem("comics"));
+    setComicFav(comic);
   };
   useEffect(() => {
     fetchData();
@@ -44,10 +52,12 @@ const Comics = () => {
   return (
     <>
       {isLoading ? (
-        <div className="loading_box">
-          <span className="loading">
-            Recherche des gemmes de l'infini en cours...
-          </span>
+        <div className="container">
+          <div className="loading_box">
+            <span className="loading">
+              Recherche des gemmes de l'infini en cours...
+            </span>
+          </div>
         </div>
       ) : (
         <div className="container">
@@ -69,17 +79,18 @@ const Comics = () => {
                     ></img>
                     <div
                       className="circle2"
-                      onClick={() => {
+                      onClick={async () => {
                         if (
                           data[index].status === false ||
                           !data[index].status
                         ) {
-                          const copy = [...comicFav];
-                          copy.push({ fav: comics });
-                          setComicFav(copy);
+                          // const copy = [...comicFav];
+                          // copy.push({ fav: comics });
+                          // setComicFav(copy);
                           const another = [...data];
                           another[index].status = true;
                           setData(another);
+                          handleSave();
                         } else {
                           const copy = [...data];
                           copy[index].status = false;

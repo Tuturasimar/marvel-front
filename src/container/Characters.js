@@ -9,12 +9,13 @@ const Characters = () => {
   const [data, setData] = useState();
   const [number, setNumber] = useState();
   const [skip, setSkip] = useState(0);
-  const [heroFav, setHeroFav] = useState([]);
-
+  const [heroFav, setHeroFav] = useState([
+    JSON.parse(localStorage.getItem("héros")),
+  ]);
   const handleSave = async () => {
-    await localStorage.setItem("héros", JSON.stringify(heroFav));
+    await localStorage.setItem("héros", JSON.stringify(data));
     let hero = JSON.parse(localStorage.getItem("héros"));
-    console.log(hero);
+    setHeroFav(hero);
   };
 
   // console.log(heroFav);
@@ -44,6 +45,8 @@ const Characters = () => {
     setNumber(response.data.data.data.total);
     setData(response.data.data.data.results);
     setIsLoading(false);
+    let hero = JSON.parse(localStorage.getItem("héros"));
+    setHeroFav(hero);
   };
 
   useEffect(() => {
@@ -53,10 +56,12 @@ const Characters = () => {
   return (
     <>
       {isLoading ? (
-        <div className="loading_box">
-          <span className="loading">
-            Recherche des gemmes de l'infini en cours...
-          </span>
+        <div className="container">
+          <div className="loading_box">
+            <span className="loading">
+              Recherche des gemmes de l'infini en cours...
+            </span>
+          </div>
         </div>
       ) : (
         <div className="container">
@@ -89,9 +94,9 @@ const Characters = () => {
                           data[index].status === false ||
                           !data[index].status
                         ) {
-                          const copy = [...heroFav];
-                          copy.push({ fav: heroes });
-                          setHeroFav(copy);
+                          // const copy = [...heroFav];
+                          // copy.push({ fav: heroes });
+                          // setHeroFav(copy);
 
                           const another = [...data];
                           another[index].status = true;

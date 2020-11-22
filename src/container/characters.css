@@ -7,7 +7,7 @@
   background-color: white;
   border-radius: 50%;
   border: 1px black solid;
-  width: 50%;
+  width: 70%;
   height: 100px;
   display: flex;
   align-items: center;
@@ -70,7 +70,7 @@
 }
 
 .hero_box {
-  width: 23.146%;
+  width: 23.11%;
   box-sizing: border-box;
   height: 250px;
   overflow: hidden;
@@ -97,6 +97,7 @@
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
 .circle {
   height: 30px;
   width: 30px;
@@ -160,4 +161,107 @@
 
 .pagination button:active {
   background-color: #f11f20;
+}
+
+@media (max-width: 1080px) {
+  .container {
+    width: 768px;
+  }
+  .header {
+    border-radius: 20%;
+  }
+  .hero_box {
+    width: 30.73%;
+  }
+  .test_pagination ul {
+    width: 80%;
+  }
+  .loading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 600px;
+  }
+  .header {
+    border-radius: 10%;
+  }
+  .menu_bouton {
+    font-size: 30px;
+  }
+  .hero_box {
+    width: 46.5%;
+  }
+  .test_pagination ul {
+    width: 90%;
+  }
+  .loading {
+    font-size: 25px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .header {
+    width: 100%;
+  }
+  .logo {
+    border-radius: 0%;
+  }
+  .menu_bouton {
+    font-size: 30px;
+    margin: 0px 10px;
+  }
+  .logo img {
+    width: 250px;
+    margin-bottom: 10px;
+  }
+  .box_search {
+    background-color: white;
+    width: 100%;
+    border-radius: 20%;
+    border: 3px black solid;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
+  .search_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    box-sizing: border-box;
+  }
+
+  .search_bar input {
+    width: 90%;
+    margin-left: 0px;
+
+    font-size: 25px;
+  }
+  .recherche,
+  .text {
+    padding-left: 0px;
+
+    font-size: 30px;
+  }
+  .test_pagination ul {
+    width: 100%;
+    font-size: 10px;
+    padding-left: 5px;
+  }
+  .hero_box {
+    width: 100%;
+  }
+  .loading_box {
+    width: 90%;
+  }
+  .loading {
+    font-size: 18px;
+  }
 }

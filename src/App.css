@@ -17,3 +17,5 @@ body {
 @import "./container/hero.css";
 
 @import "./container/comics.css";
+
+@import "./container/favoris.css";
